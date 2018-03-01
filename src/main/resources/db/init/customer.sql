@@ -4,9 +4,10 @@
 DROP TABLE IF EXISTS customer CASCADE;
 
 CREATE TABLE customer (
-  id         UUID NOT NULL,
-  first_name TEXT NOT NULL,
-  last_name  TEXT NOT NULL
+  id         UUID  NOT NULL,
+  first_name TEXT  NOT NULL,
+  last_name  TEXT  NOT NULL,
+  info       JSONB NOT NULL
 );
 
 ALTER TABLE customer

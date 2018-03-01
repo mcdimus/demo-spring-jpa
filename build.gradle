@@ -29,17 +29,18 @@ configurations {
 }
 
 dependencies {
+    compileOnly('org.projectlombok:lombok')
+
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
 
+    compile('org.postgresql:postgresql')
     compile('org.liquibase:liquibase-core')
+    compile('com.vladmihalcea:hibernate-types-52:2.0.0')
 
     runtime('org.springframework.boot:spring-boot-devtools')
-    runtime('org.postgresql:postgresql')
-
-    compileOnly('org.projectlombok:lombok')
 
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 
