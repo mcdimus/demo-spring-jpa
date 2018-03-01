@@ -18,6 +18,7 @@ apply plugin: 'war'
 group = 'ee.maksimov.demo.spring.jpa'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -33,7 +34,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
 
-    compile('org.liquibase:liquibase-core')
+//    compile('org.liquibase:liquibase-core')
+    compile("com.h2database:h2")
 
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('org.postgresql:postgresql')
