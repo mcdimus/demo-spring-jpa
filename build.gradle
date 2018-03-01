@@ -34,8 +34,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
 
-//    compile('org.liquibase:liquibase-core')
-    compile("com.h2database:h2")
+    compile('org.liquibase:liquibase-core')
 
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('org.postgresql:postgresql')
