@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface CustomerRepository extends CrudRepository<Customer, UUID>{
+public interface CustomerRepository extends CrudRepository<Customer, UUID> {
 
   List<Customer> findByLastName(String lastName);
 
