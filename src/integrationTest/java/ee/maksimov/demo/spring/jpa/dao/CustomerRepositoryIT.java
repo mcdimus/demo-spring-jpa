@@ -1,5 +1,6 @@
 package ee.maksimov.demo.spring.jpa.dao;
 
+import ee.maksimov.demo.spring.jpa.AbstractIT;
 import ee.maksimov.demo.spring.jpa.model.Customer;
 import ee.maksimov.demo.spring.jpa.model.CustomerInfo;
 import org.assertj.core.util.Maps;

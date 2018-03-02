@@ -1,8 +1,7 @@
-package ee.maksimov.demo.spring.jpa.dao;
+package ee.maksimov.demo.spring.jpa;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import ee.maksimov.demo.spring.jpa.SpringJpaApplication;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.RunWith;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseDataSource;
@@ -63,7 +62,7 @@ public abstract class AbstractIT {
     @Profile("test")
     @LiquibaseDataSource
     public DataSource provideLiquibaseDataSource() {
-      // Liquibase should use its own data source
+      // Liquibase may use its own data source, otherwise the default data source of application will be used
 
       // path to changelog.xml is provided in 'application-test.properties'
       HikariConfig config = new HikariConfig();
