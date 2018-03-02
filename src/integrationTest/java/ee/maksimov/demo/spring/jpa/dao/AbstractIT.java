@@ -3,6 +3,7 @@ package ee.maksimov.demo.spring.jpa.dao;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import ee.maksimov.demo.spring.jpa.SpringJpaApplication;
+import org.jetbrains.annotations.NotNull;
 import org.junit.runner.RunWith;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseDataSource;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,12 +16,14 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 import javax.sql.DataSource;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
+@Transactional
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringJpaApplication.class, webEnvironment = RANDOM_PORT)
@@ -46,7 +49,7 @@ public abstract class AbstractIT {
   public static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     @Override
-    public void initialize(ConfigurableApplicationContext context) {
+    public void initialize(@NotNull ConfigurableApplicationContext context) {
       TestPropertyValues.of("spring.datasource.url" + postgre.getJdbcUrl())
         .applyTo(context.getEnvironment());
     }
